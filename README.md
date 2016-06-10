@@ -25,9 +25,9 @@ DomCourt use two (2) images:
 
 You can modify and/or build that images with the following docker commands:
 
--   docker built -t domcourt/court -f DomCourtDockerFile .
+> docker built -t domcourt/court -f DomCourtDockerFile .
 
--   docker built -t domcourt/domjudge -f DomJudgeDockerFile .
+> docker built -t domcourt/domjudge -f DomJudgeDockerFile .
 
 Run
 ---
