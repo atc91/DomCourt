@@ -1,0 +1,17 @@
+ FROM jboss/wildfly
+
+ #Cliente docker
+COPY docker.repo  /etc/yum.repos.d/docker.repo
+USER root
+RUN yum update && \
+yum install docker -y
+ 
+ #Copia los archivos de configuracion de wildfly 
+RUN mkdir -p  /opt/jboss/wildfly/customization/
+COPY execute.sh /opt/jboss/wildfly/customization/
+COPY mysql-connector-java-5.1.39-bin.jar /opt/jboss/wildfly/customization/
+COPY DomCourt-ear/target/DomCourt-ear-1.0-SNAPSHOT.ear  /opt/jboss/wildfly/customization/
+
+#Ejecuta el script de configuracion
+CMD ["/opt/jboss/wildfly/customization/execute.sh"]
+ 
