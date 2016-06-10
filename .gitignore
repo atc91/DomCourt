@@ -9,3 +9,5 @@ DomCourt-ejb/nb-configuration.xml
 DomCourt-web/${project.basedir}/*
 DomCourt-web/target/*
 DomCourt-web/nb-configuration.xml
+
+.mwb.bak
